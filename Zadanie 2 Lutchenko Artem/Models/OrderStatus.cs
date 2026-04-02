@@ -1,0 +1,7 @@
+public enum OrderStatus
+{
+    New,
+    Validated,
+    Processing,
+    Completed
+}
