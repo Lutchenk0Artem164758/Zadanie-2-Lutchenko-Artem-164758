@@ -119,7 +119,7 @@ class Program
             .Select(i => new Order { Id = i, Amount = 10, Status = OrderStatus.Completed })
             .ToList();
 
-        // ❌ unsafe
+        //  unsafe
         var unsafeStats = new OrderStatisticsUnsafe();
 
         Parallel.ForEach(orders, o =>
@@ -129,7 +129,7 @@ class Program
 
         Console.WriteLine($"UNSAFE: {unsafeStats.TotalProcessed} | {unsafeStats.TotalRevenue}");
 
-        // ✅ safe
+        //  safe
         var safeStats = new OrderStatistics();
 
         Parallel.ForEach(orders, o =>
